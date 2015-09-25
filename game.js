@@ -1,12 +1,12 @@
 var sprites = {
  ship: { sx: 0, sy: 0, w: 37, h: 42, frames: 1 },
  missile: { sx: 0, sy: 30, w: 2, h: 10, frames: 1 },
- enemy_purple: { sx: 37, sy: 0, w: 42, h: 43, frames: 1 },
- enemy_bee: { sx: 79, sy: 0, w: 37, h: 43, frames: 1 },
- enemy_ship: { sx: 116, sy: 0, w: 42, h: 43, frames: 1 },
- enemy_circle: { sx: 158, sy: 0, w: 32, h: 33, frames: 1 },
+ enemy_purple: { sx: 37, sy: 0, w: 42, h: 70, frames: 1 },
+ enemy_bee: { sx: 79, sy: 0, w: 37, h: 70, frames: 1 },
+ enemy_ship: { sx: 116, sy: 0, w: 42, h: 70, frames: 1 },
+ enemy_circle: { sx: 163, sy: 0, w: 70, h: 70, frames: 1 },
  explosion: { sx: 0, sy: 64, w: 64, h: 64, frames: 12 },
- enemy_missile: { sx: 9, sy: 42, w: 3, h: 20, frame: 1, }
+ enemy_missile: { sx: 9, sy: 42, w: 12, h: 20, frame: 1, }
 };
 
 var enemies = {
@@ -39,8 +39,8 @@ var startGame = function() {
     Game.setBoard(1,new Starfield(50,0.6,100));
     Game.setBoard(2,new Starfield(100,1.0,50));
   }  
-  Game.setBoard(3,new TitleScreen("Alien Invasion", 
-                                  "Press fire to start playing",
+  Game.setBoard(3,new TitleScreen("Kill ولاد سليم", 
+                                  "فلنقتلهم جميعاً",
                                   playGame));
 };
 
@@ -67,14 +67,14 @@ var playGame = function() {
 };
 
 var winGame = function() {
-  Game.setBoard(3,new TitleScreen("You win!", 
-                                  "Press fire to play again",
+  Game.setBoard(3,new TitleScreen("كسبت!", 
+                                  "دوس عشان تلعب تاني",
                                   playGame));
 };
 
 var loseGame = function() {
-  Game.setBoard(3,new TitleScreen("You lose!", 
-                                  "Press fire to play again",
+  Game.setBoard(3,new TitleScreen("خسرت!", 
+                                  "دوس عشان تلعب تاني",
                                   playGame));
 };
 
